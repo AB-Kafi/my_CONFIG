@@ -6,7 +6,7 @@
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-
+:set showcmd
 
 "vundle pack
 
@@ -39,7 +39,9 @@ Plugin 'gmarik/Vundle.vim'
 	Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 	Plugin 'tmhedberg/SimpylFold'
 	Plugin 'kien/ctrlp.vim'
-
+	Plugin 'puremourning/vimspector'
+	Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+	Plugin 'sansyrox/vim-python-virtualenv'
 " ...
 
 " All of your Plugins must be added before the following line
@@ -48,16 +50,26 @@ filetype plugin indent on    " required
 
 
 
+
+
+
+
+"python venv
+let g:python3_host_prog='/usr/bin/python3'
+
+"python mode config
+	"not yet implimented
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"nerdtree tab navigation:conrol +l = next, h = previous , n = new
-map  <C-l> :tabn<CR> 
-map  <C-h> :tabp<CR>
-map  <C-n> :tabnew<CR>
+"nerdtree tab navigation:conrol+alter +l = next, h = previous , n = new
+map  <C-A-l> :tabn<CR> 
+map  <C-A-h> :tabp<CR>
+map  <C-A-n> :tabnew<CR>
 
 " open terminal below all splits
 cabbrev bterm botright term
@@ -65,6 +77,8 @@ cabbrev bterm botright term
 "bottom terminal open
 map  <F4> :bterm<CR>
 
+"poweline 
+set laststatus=2
 
 "syntax enable
 let python_highlight_all=1
@@ -80,4 +94,6 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "nerdtree
 autocmd VimEnter * NERDTree
+"root dir from nerdtree
+let g:NERDTreeChDirMode = 2
 
