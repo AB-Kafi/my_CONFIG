@@ -1,0 +1,8 @@
+
+!rofi color settings
+
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: #2f343f,  #f3f4f5, #2f343f,  #2f343f,   #9575cd
+
+!                  'background', 'border', 'separator'
+rofi.color-window: #2f343f,      #002b36,   #2f343f 
