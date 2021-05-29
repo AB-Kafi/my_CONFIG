@@ -1,3 +1,4 @@
+:set clipboard=unnamedplus
 "hybrid line number
 :set number relativenumber
 :augroup numbertoggle
@@ -27,21 +28,23 @@ Plugin 'gmarik/Vundle.vim'
 " used Bundle instead of Plugin)
 
 	"ayu-theme plugin
-	Plugin 'ayu-theme/ayu-vim'
-	Plugin 'juanedi/predawn.vim'
 	Plugin 'vim-syntastic/syntastic'
+        Plugin 'juanedi/predawn.vim'
 	Plugin 'nvie/vim-flake8'
 	Plugin 'vim-scripts/indentpython.vim'
 	Bundle 'Valloric/YouCompleteMe'
+	Plugin 'vim-airline/vim-airline'
+	Plugin 'vim-airline/vim-airline-themes'
 	Plugin 'scrooloose/nerdtree'
 	Plugin 'jistr/vim-nerdtree-tabs'
 	Plugin 'tpope/vim-fugitive'
-	Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 	Plugin 'tmhedberg/SimpylFold'
 	Plugin 'kien/ctrlp.vim'
 	Plugin 'puremourning/vimspector'
 	Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 	Plugin 'sansyrox/vim-python-virtualenv'
+	Plugin 'bfrg/vim-cpp-modern'
+	Plugin 'davidhalter/jedi-vim'
 " ...
 
 " All of your Plugins must be added before the following line
@@ -49,7 +52,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
-
+let g:airline_theme='simple'
 
 
 
@@ -57,8 +60,6 @@ filetype plugin indent on    " required
 "python venv
 let g:python3_host_prog='/usr/bin/python3'
 
-"python mode config
-	"not yet implimented
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -77,13 +78,11 @@ cabbrev bterm botright term
 "bottom terminal open
 map  <F4> :bterm<CR>
 
-"poweline 
-set laststatus=2
 
 "syntax enable
 let python_highlight_all=1
 syntax on
-colorscheme predawn
+colorscheme predawn 
 
 "using unicode
 set encoding=utf-8
